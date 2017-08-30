@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheet - Depandencies -->
+    <!-- Stylesheet - Your Work -->
+    <link rel="stylesheet" href="">
+</head>
+<body ng-app="MainApp">
+
+    <main ng-controller="formCtrl">
+        <ng-form
+            name="form"
+            ng-submit="submit()">
+            // NOT WORK 
+            <label>
+                Label : 
+                <input type="text" ng-model="textI" required="true" />
+            </label>
+            <br />
+            <div ng-show="form.$submitted || form.textI.$touched">
+                <div ng-show="form.textI.$error.required">Tell us your name.</div>
+            </div>
+
+            <input type="submit" name="submit"/>
+        </ng-form>
+        <pre>{{form}}</pre>
+        <pre>error?{{form.textI}}</pre>
+    </main>
+
+    <!-- Scripts - Depandencies -->
+    <!-- Angularjs Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-sanitize.min.js"></script>
+    <!-- Scripts - Your Work -->
+    <script src="script.js"></script>
+    
+</body>
+</html>

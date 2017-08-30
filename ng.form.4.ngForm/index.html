@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheet - Depandencies -->
+    <!-- Stylesheet - Your Work -->
+    <link rel="stylesheet" href="">
+</head>
+<body ng-app="MainApp">
+
+    <main ng-controller="formCtrl">
+        // NE FONCTIONNNE PAS CAR IL A POUR BUT D'ETRE UTILISE DANS UN FORM POUR GERER UN ENSEMBLE DE BOUTONS
+        <br/>
+        <ng-form
+            name="form"
+            ng-submit="submit(data.textInput)"
+            novlidate>
+            <label>
+                Label : 
+                <input type="text" name="textInput" ng-model="data.textInput" required="true" />
+            </label>
+            <br />
+            <div ng-show="form.$submitted || form.textInput.$touched">
+                <div ng-show="form.textInput.$error.required">Tell us your name.</div>
+            </div>
+
+            <input type="submit" name="submit"/>
+        </ng-form>
+        <pre>TextInput : {{ data.textInput }}</pre>
+        <pre>{{form}}</pre>
+        <pre>error?{{form.textInput.$error.required}}</pre>
+    </main>
+
+    <!-- Scripts - Depandencies -->
+    <!-- Angularjs Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-sanitize.min.js"></script>
+    <!-- Scripts - Your Work -->
+    <script src="script.js"></script>
+    
+</body>
+</html>
